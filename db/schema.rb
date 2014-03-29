@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140329101147) do
+ActiveRecord::Schema.define(version: 20140329112825) do
 
   create_table "drivers", force: true do |t|
     t.string   "name"
@@ -35,5 +35,16 @@ ActiveRecord::Schema.define(version: 20140329101147) do
   end
 
   add_index "metrics", ["driver_id"], name: "index_metrics_on_driver_id"
+
+  create_table "reviews", force: true do |t|
+    t.string   "name"
+    t.integer  "stars"
+    t.text     "comment"
+    t.integer  "driver_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reviews", ["driver_id"], name: "index_reviews_on_driver_id"
 
 end

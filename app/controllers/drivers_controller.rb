@@ -10,6 +10,7 @@ class DriversController < ApplicationController
   # GET /drivers/1
   # GET /drivers/1.json
   def show
+    @driver = Driver.find(params[:id])
   end
 
   # GET /drivers/new
@@ -19,6 +20,7 @@ class DriversController < ApplicationController
 
   # GET /drivers/1/edit
   def edit
+    @driver = Driver.find(params[:id])
   end
 
   # POST /drivers
@@ -28,7 +30,7 @@ class DriversController < ApplicationController
 
     respond_to do |format|
       if @driver.save
-        format.html { redirect_to @driver, notice: 'Driver was successfully created.' }
+        format.html { redirect_to @driver, notice: 'Driver was successfully created!' }
         format.json { render action: 'show', status: :created, location: @driver }
       else
         format.html { render action: 'new' }
@@ -42,7 +44,7 @@ class DriversController < ApplicationController
   def update
     respond_to do |format|
       if @driver.update(driver_params)
-        format.html { redirect_to @driver, notice: 'Driver was successfully updated.' }
+        format.html { redirect_to @driver, notice: 'Driver was successfully updated!' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -54,6 +56,7 @@ class DriversController < ApplicationController
   # DELETE /drivers/1
   # DELETE /drivers/1.json
   def destroy
+    @driver = Driver.find(params[:id])
     @driver.destroy
     respond_to do |format|
       format.html { redirect_to drivers_url }

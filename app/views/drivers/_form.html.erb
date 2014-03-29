@@ -1,33 +1,27 @@
 <%= form_for(@driver) do |f| %>
-  <% if @driver.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@driver.errors.count, "error") %> prohibited this driver from being saved:</h2>
-
-      <ul>
-      <% @driver.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
+  <%= render "shared/errors", object: @driver %>
+  <fieldset>
+    <ol>
+      <li class="required">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
+    <%= f.text_field :name, autofocus: true %>
+  </li>
+  <li class="required">
     <%= f.label :phone_number %><br>
     <%= f.text_field :phone_number %>
-  </div>
-  <div class="field">
+  </li>
+  <li class="required">
     <%= f.label :joined_on %><br>
     <%= f.date_select :joined_on %>
-  </div>
-  <div class="field">
+  </li>
+  <li class="required">
     <%= f.label :image_file_name %><br>
     <%= f.text_field :image_file_name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  </li>
+   </ol>
+    <p>
+      <%= f.submit %>
+      <%= link_to "Cancel", drivers_path, class: 'button' %>
+    </p>
+  </fieldset>
 <% end %>

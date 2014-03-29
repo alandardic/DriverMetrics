@@ -1,33 +1,21 @@
-<h1>Listing drivers</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Phone number</th>
-      <th>Joined on</th>
-      <th>Image file name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @drivers.each do |driver| %>
-      <tr>
-        <td><%= driver.name %></td>
-        <td><%= driver.phone_number %></td>
-        <td><%= driver.joined_on %></td>
-        <td><%= driver.image_file_name %></td>
-        <td><%= link_to 'Show', driver %></td>
-        <td><%= link_to 'Edit', edit_driver_path(driver) %></td>
-        <td><%= link_to 'Destroy', driver, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Driver', new_driver_path %>
+<ul id="drivers">
+  <% @drivers.each do |driver| %>
+    <li>
+      <article class="driver">
+        <header>
+          <%= image_for(driver) %>
+          <h2><%= link_to driver.name, driver %> (<%= driver.joined_on.year %>)</h2>
+        </header>
+          <p>
+            <%= driver.phone_number %>
+          </p>
+         <h3>Average Review</h3>
+          <p>
+            <%= format_average_stars(driver) %>
+          </p>
+        <footer>
+        </footer>
+      </article>
+    </li>
+  <% end %>
+</ul>

@@ -32,9 +32,16 @@ Driver.create!([
     joined_on: "2012-05-09"
   },
   {
-	name: 'Ilana Berkowitz',
-    image_file_name: 'ilana_berkowitz.jpg',
+	name: 'Ilana Berkovits',
+    image_file_name: 'ilana_berkovits.jpg',
 	phone_number: '04-6889867', 
 	joined_on: "2010-04-04"
   }
 ])
+
+driver = Driver.find_by(name: 'Travis Bikel')
+driver.reviews.create!(name: "Roger Ebert", stars: 5, comment: "He drove like a maniac!!! It was the best ride of my life")
+driver.reviews.create!(name: "Gene Siskel", stars: 1, comment: "he was rude and violent")
+driver.reviews.create!(name: "Peter Travers", stars: 2, comment: "Terrible driver, he reminded me Tony montana")
+driver = Driver.find_by(name: 'Ido Rosenblum')
+driver.reviews.create!(name: "Elvis Mitchell", stars: 5, comment: "Ido is a really cool dude - i have enjoyed every moment in the taxi")
