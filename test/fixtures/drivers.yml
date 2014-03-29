@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  phone_number: MyString
+  joined_on: 2014-03-29
+  image_file_name: MyString
+
+two:
+  name: MyString
+  phone_number: MyString
+  joined_on: 2014-03-29
+  image_file_name: MyString

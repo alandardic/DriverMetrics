@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @driver.name %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @driver.phone_number %>
+</p>
+
+<p>
+  <strong>Joined on:</strong>
+  <%= @driver.joined_on %>
+</p>
+
+<p>
+  <strong>Image file name:</strong>
+  <%= @driver.image_file_name %>
+</p>
+
+<%= link_to 'Edit', edit_driver_path(@driver) %> |
+<%= link_to 'Back', drivers_path %>
