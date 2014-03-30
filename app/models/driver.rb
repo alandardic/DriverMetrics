@@ -4,7 +4,7 @@ class Driver < ActiveRecord::Base
 
   validates :name, :joined_on, presence: true
   
-  validates :phone_number, length: { minimum: 7 }
+  validates :phone_number, length: { minimum: 9 }
 
   validates :image_file_name, allow_blank: true, format: {
     with:    /\w+.(gif|jpg|png)\z/i,

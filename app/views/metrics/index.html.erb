@@ -1,0 +1,21 @@
+<ul id="drivers">
+  <% @drivers.each do |driver| %>
+    <li>
+      <article class="driver">
+        <header>
+          <%= image_for(driver) %>
+          <h2><%= link_to driver.name, driver %> (<%= driver.joined_on.year %>)</h2>
+        </header>
+          <p>
+            <%= driver.phone_number %>
+          </p>
+         <h3>Average Review</h3>
+          <p>
+            <%= format_average_stars(driver) %>
+          </p>
+        <footer>
+        </footer>
+      </article>
+    </li>
+  <% end %>
+</ul>

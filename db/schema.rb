@@ -11,13 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140329112825) do
+ActiveRecord::Schema.define(version: 20140329160618) do
 
   create_table "drivers", force: true do |t|
     t.string   "name"
     t.string   "phone_number"
     t.date     "joined_on"
     t.string   "image_file_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "metric_unique_names", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

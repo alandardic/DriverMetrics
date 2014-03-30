@@ -1,0 +1,34 @@
+<article id="driver" class="driver">
+  <header>
+    <%= image_for(@driver) %>
+    <h1><%= @driver.name %></h1>
+    <h2>Joined: <%= @driver.joined_on %></h2>
+  </header>
+
+  <h3>Phone Number</h3>
+  <p>
+    <%= @driver.phone_number %>
+  </p>
+        
+  <h3>Reviews</h3>
+  <p>
+    <%= link_to pluralize(@driver.reviews.size, "review"), 
+                  driver_reviews_path(@driver) %>
+  </p>
+
+  <h3>Average Review</h3>
+  <p>
+    <%= format_average_stars(@driver) %>
+  </p>
+  
+  <footer>
+    <%= link_to "Write Review", new_driver_review_path(@driver), 
+             class: 'button ok review' %>
+    <nav>
+      <%= link_to 'Edit', edit_driver_path(@driver), class: 'button' %>
+      <%= link_to 'Delete', @driver, 
+                  class: 'button',
+                  method: :delete, data: { confirm: 'Are you sure?' } %>
+    </nav>
+  </footer>
+</article>

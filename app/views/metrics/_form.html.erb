@@ -1,0 +1,27 @@
+<%= form_for(@driver) do |f| %>
+  <%= render "shared/errors", object: @driver %>
+  <fieldset>
+    <ol>
+      <li class="required">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, autofocus: true %>
+  </li>
+  <li class="required">
+    <%= f.label :phone_number %><br>
+    <%= f.text_field :phone_number %>
+  </li>
+  <li class="required">
+    <%= f.label :joined_on %><br>
+    <%= f.date_select :joined_on %>
+  </li>
+  <li class="required">
+    <%= f.label :image_file_name %><br>
+    <%= f.text_field :image_file_name %>
+  </li>
+   </ol>
+    <p>
+      <%= f.submit %>
+      <%= link_to "Cancel", drivers_path, class: 'button' %>
+    </p>
+  </fieldset>
+<% end %>
