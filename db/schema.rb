@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140329160618) do
+ActiveRecord::Schema.define(version: 20140330164109) do
 
   create_table "drivers", force: true do |t|
     t.string   "name"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20140329160618) do
   create_table "metrics", force: true do |t|
     t.string   "name"
     t.string   "value"
-    t.string   "type"
+    t.string   "mtype"
     t.float    "latitude"
     t.float    "longitude"
     t.datetime "time_stamp"

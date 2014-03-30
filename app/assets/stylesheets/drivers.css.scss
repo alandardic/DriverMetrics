@@ -1,4 +1,13 @@
 @import "colors";
+/* WELCOME */
+
+article#welcome {
+  h2 {
+    margin: .5em 0;
+    font-size: 115%;
+    color: $secondary-text-color;
+  }
+}
 
 /* DRIVERS */
 
