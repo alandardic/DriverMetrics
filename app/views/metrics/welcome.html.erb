@@ -1,7 +1,4 @@
-<header id="content-header">
-  <h1>Metrics of <%= link_to(@driver.name, @driver) %></h2>
-</header>
-
+<h1>Welcome to The METRICS!</h1>
 <%= select_tag "metrics", options_for_select(@metric_names.insert(0, ' -- Metrics Names -- ')), :onchange=> 'loadGmap($(this).val());' %>
 
 <div style="clear:both"></div>

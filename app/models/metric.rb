@@ -1,12 +1,7 @@
 class Metric < ActiveRecord::Base
- 
   belongs_to :driver
   
   validates_presence_of :name, :value, :mtype, :latitude, :longitude, :time_stamp, :driver_id 
-
-  def get_unique_names
-  	return self.all().uniq()
-  end
 
    def self.import_metrics(filename)
     File.open(filename) do |file|

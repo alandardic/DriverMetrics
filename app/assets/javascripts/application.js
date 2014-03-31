@@ -14,3 +14,22 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+function loadGmap(metric_name) {
+
+    $.ajax({
+        type: "POST",
+        url: '/metrics/get',
+        data: {name: metric_name},
+        success: function(data){
+            handler = Gmaps.build('Google');
+            handler.buildMap({ provider: {}, internal: {id: 'map'}}, function () {
+                markers = handler.addMarkers(data);
+                handler.bounds.extendWith(markers);
+                handler.fitMapToBounds();
+            });
+        },
+    });
+
+
+}

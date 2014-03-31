@@ -1,8 +1,11 @@
 MatricsProject::Application.routes.draw do
-  root "drivers#index"
+  root "metrics#welcome"
   resources :drivers do
     resources :reviews
-end
+    resources :metrics
+
+  end
+  post 'metrics/get' => "metrics#get_markers"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

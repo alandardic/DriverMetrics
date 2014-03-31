@@ -9,7 +9,13 @@
   <p>
     <%= @driver.phone_number %>
   </p>
-        
+  
+  <h3>Metrics</h3>
+  <p>
+    <%= link_to pluralize(@driver.metrics.size, "metric"), 
+                  driver_metrics_path(@driver) %>
+  </p>
+
   <h3>Reviews</h3>
   <p>
     <%= link_to pluralize(@driver.reviews.size, "review"), 

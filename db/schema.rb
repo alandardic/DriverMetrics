@@ -22,12 +22,6 @@ ActiveRecord::Schema.define(version: 20140330164109) do
     t.datetime "updated_at"
   end
 
-  create_table "metric_unique_names", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "metrics", force: true do |t|
     t.string   "name"
     t.string   "value"

@@ -9,12 +9,16 @@
           <p>
             <%= driver.phone_number %>
           </p>
+          <p>
+            <%= pluralize(driver.metrics.size, "metric") %>
+          </p>
          <h3>Average Review</h3>
           <p>
             <%= format_average_stars(driver) %>
           </p>
         <footer>
         </footer>
+        <div style="clear:both"></div>
       </article>
     </li>
   <% end %>
