@@ -1,8 +1,3 @@
 <h1>Welcome to The METRICS!</h1>
-<%= select_tag "metrics", options_for_select(@metric_names.insert(0, ' -- Metrics Names -- ')), :onchange=> 'loadGmap($(this).val());' %>
 
-<div style="clear:both"></div>
-
-<div style='width: 100%'>
-  <div id="map" style='width: 100%; height: 500px;'></div>
-</div>
+<%= render "shared/selected_metrics", object: @metric_names %>
